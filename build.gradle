@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'ru.bis.cc'
+version = '1.0-SNAPSHOT'
+//compileJava.options.encoding = 'windows-1251'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:2.3.3")
+
+    implementation("org.glassfish.jaxb:jaxb-runtime:2.3.3")
+
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'ru.bis.cc.XMLTest'
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": "ru.bis.cc.XMLTest")
+    }
+}
+
