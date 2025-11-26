@@ -17,7 +17,19 @@ dependencies {
     implementation("jakarta.xml.bind:jakarta.xml.bind-api:2.3.3")
 
     implementation("org.glassfish.jaxb:jaxb-runtime:2.3.3")
-		
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 java {
