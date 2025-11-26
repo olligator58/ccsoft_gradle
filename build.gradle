@@ -6,7 +6,7 @@ plugins {
 
 group = 'ru.bis.cc'
 version = '1.0-SNAPSHOT'
-//compileJava.options.encoding = 'windows-1251'
+compileJava.options.encoding = 'windows-1251'
 
 repositories {
     mavenCentral()
